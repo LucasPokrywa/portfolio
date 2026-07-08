@@ -1,12 +1,17 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/home";
+import Parcours from "./pages/parcours";
 
 function App() {
-
-  return (
-    <>
-      <section> <h1>Portfolio</h1> </section>
-    </>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/parcours" element={<Parcours />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
