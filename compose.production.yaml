@@ -9,3 +9,9 @@ services:
       HOST: 0.0.0.0
       PORT: "${PORT:-5173}"
     restart: unless-stopped
+
+
+networks:
+  proxy:
+    external: true
+    name: ${VPS_NETWORK_NAME:-proxy}
