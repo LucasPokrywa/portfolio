@@ -6,6 +6,10 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const host = env.HOST || '0.0.0.0'
   const port = Number(env.PORT || 5173)
+  const urlSite = env.URL_SITE || 'localhost'
+
+  console.log(urlSite);
+  
 
   return {
     plugins: [react()],
@@ -14,7 +18,7 @@ export default defineConfig(({ mode }) => {
       host, 
       port, 
       allowedHosts: [
-        env.URL_SITE,
+        urlSite,
       ],
     },
 
