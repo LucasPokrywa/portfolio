@@ -5,10 +5,13 @@ cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 case "${1:-}" in
   --production)
-    npm run build
-    exec npm run preview
+    exec docker compose -f compose.production.yaml up --build -d
+    ;;
+  "")
+    exec docker compose up --build
     ;;
   *)
-    exec npm run dev
+    echo "Usage: $0 [--production]" >&2
+    exit 1
     ;;
 esac

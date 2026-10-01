@@ -37,13 +37,13 @@ export default function Parcours() {
     },
   ]
 
-  const sectionRef = useRef(null)
-  const trackRef = useRef(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
 
   const targetProgressRef = useRef(0) 
   const currentProgressRef = useRef(0) 
   const maxTranslateRef = useRef(0)
-  const rafRef = useRef(null)
+  const rafRef = useRef<number | null>(null)
 
   const [translateX, setTranslateX] = useState(0)
 
@@ -78,14 +78,16 @@ export default function Parcours() {
     }
 
     rafRef.current = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(rafRef.current)
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+    }
   }, [])
 
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
 
-    const handleWheel = (e) => {
+    const handleWheel = (e: WheelEvent) => {
       const rect = section.getBoundingClientRect()
       const isVisible = rect.top <= 1 && rect.bottom >= window.innerHeight - 1
       if (!isVisible) return
