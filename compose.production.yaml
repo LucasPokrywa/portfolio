@@ -8,8 +8,9 @@ services:
     environment:
       HOST: 0.0.0.0
       PORT: "${PORT:-5173}"
+      URL_SITE: "${URL_SITE:-localhost}"
     restart: unless-stopped
-    
+
     networks:
       default:
       proxy:
