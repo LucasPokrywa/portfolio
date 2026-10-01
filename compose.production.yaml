@@ -4,5 +4,8 @@ services:
       context: .
       target: production
     ports:
-      - "${HOST:-0.0.0.0}:${PORT:-5173}:80"
+      - "${HOST:-0.0.0.0}:${PORT:-5173}:${PORT:-5173}"
+    environment:
+      HOST: 0.0.0.0
+      PORT: "${PORT:-5173}"
     restart: unless-stopped

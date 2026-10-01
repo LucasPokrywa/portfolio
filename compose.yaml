@@ -4,10 +4,10 @@ services:
       context: .
       target: development
     ports:
-      - "${HOST:-0.0.0.0}:${PORT:-5173}:5173"
+      - "${HOST:-0.0.0.0}:${PORT:-5173}:${PORT:-5173}"
     environment:
       HOST: 0.0.0.0
-      PORT: 5173
+      PORT: "${PORT:-5173}"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
