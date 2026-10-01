@@ -11,5 +11,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     server: { host, port },
     preview: { host, port },
+    allowedHosts: [
+        env.URL_SITE,
+      ],
   }
 })
