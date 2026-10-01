@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build:
+      context: .
+      target: production
+    ports:
+      - "${HOST:-0.0.0.0}:${PORT:-5173}:80"
+    restart: unless-stopped

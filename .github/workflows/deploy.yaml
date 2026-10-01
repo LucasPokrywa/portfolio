@@ -1,0 +1,26 @@
+name: Deploy production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy on VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            cd "${{ vars.VPS_PROJECT_PATH }}"
+            git sparse-checkout set --no-cone '/*' '!/mobile/'
+            git fetch origin main
+            git reset --hard origin/main
+            ./start.sh --production
