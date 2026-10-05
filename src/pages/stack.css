@@ -1,0 +1,96 @@
+.stack-page {
+    box-sizing: border-box;
+    width: min(1120px, 100%);
+    margin-inline: auto;
+    padding: 128px 24px 64px;
+    font-family: Arial, sans-serif;
+}
+
+.stack-page h1 {
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.stack-intro {
+    margin: 0 auto 40px;
+    max-width: 520px;
+    text-align: center;
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.stack-category {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    background: #101010;
+}
+
+.stack-category h2 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.stack-category p {
+    margin: 0 0 24px;
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.stack-category ul {
+    display: grid;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stack-category li {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.stack-skill-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.stack-level { color: #999; font-size: 12px; }
+
+.stack-gauge {
+    height: 7px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #303030;
+}
+
+.stack-gauge > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #93c5fd;
+}
+
+@media (max-width: 640px) {
+    .stack-page { padding: 104px 20px 40px; }
+    .stack-grid { grid-template-columns: 1fr; gap: 16px; }
+    .stack-category { padding: 24px; }
+}
