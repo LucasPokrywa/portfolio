@@ -48,6 +48,10 @@
         gap: 0;
         padding: 8px 20px;
     }
-    .header-nav ul { gap: 24px; }
+    .header-nav ul { gap: clamp(12px, 4vw, 24px); }
     .header-nav a { font-size: 20px; }
+}
+
+@media (max-width: 380px) {
+    .header-nav a { font-size: 18px; }
 }

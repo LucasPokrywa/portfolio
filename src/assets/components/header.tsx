@@ -9,6 +9,7 @@ function Header() {
                     <li><NavLink to="/" end>Accueil</NavLink></li>
                     <li><NavLink to="/parcours">Parcours</NavLink></li>
                     <li><NavLink to="/projects">Projets</NavLink></li>
+                    <li><NavLink to="/stack">Stack</NavLink></li>
                 </ul>
             </nav>
         </header>

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Parcours from "./pages/parcours";
 import Projects from "./pages/projects";
+import Stack from "./pages/stack";
 import Header from "./assets/components/header";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/parcours" element={<Parcours />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/stack" element={<Stack />} />
             </Routes>
         </BrowserRouter>
     );
