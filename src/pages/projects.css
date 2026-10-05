@@ -1,0 +1,108 @@
+.projects-container {
+    box-sizing: border-box;
+    width: min(1120px, 100%);
+    margin-inline: auto;
+    padding: 128px 24px 64px;
+    font-family: Arial, sans-serif;
+}
+
+.projects-container h1 {
+    text-align: center;
+    margin: 0 0 36px;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+#grid-projets {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    background: #101010;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.project-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.project-pin {
+    display: inline-flex;
+    flex-shrink: 0;
+    padding-top: 5px;
+    color: #bbb;
+}
+
+.project-card h2 {
+    min-width: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.project-card p {
+    margin: 0 0 28px;
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.project-card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #292929;
+    color: #ddd;
+    font-size: 13px;
+}
+
+.project-card-link > span { font-size: 20px; }
+
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-3px);
+        border-color: #666;
+        background: #171717;
+    }
+}
+
+.project-card:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+    #grid-projets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 580px) {
+    .projects-container { padding: 104px 20px 40px; }
+    .projects-container h1 { margin-bottom: 24px; }
+    #grid-projets { grid-template-columns: 1fr; gap: 16px; }
+    .project-card { padding: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card { transition: none; }
+    .project-card:hover { transform: none; }
+}
